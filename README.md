@@ -22,4 +22,8 @@ This wordpress example has already been setup with an admin user.
 If a you want to have a clean install just delete the content of the db_data directory.
 
 ## Scaling it
-To scale this type of application you need to use an application like Docker Swarm or Kubernetes. Those applications allow you to automate deployment, scaling, and management of containerized applications. You will still have to consider the db container needs to be persistent and is not stateless.
+There are two ways to scale this example application:
+1. By using a tool like Docker Swarm or Kubernetes. Those applications allow you to automate deployment, scaling, and management of containerized applications.
+2. By going into the cloud and use a provider like AWS. AWS has a service called ECS, which allows the deployment of docker containers and has the scaling tool like the above mentioned tools ready to use. 
+
+With both scenarios you need to consider different mechanisms to apply the scaling. Horrizontal scaling for the statless container hosting the wordpress part and sequential scaling for the db container.
